@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
+    <title>Comments</title>
     <link rel="stylesheet" href="/Public/public/css/style.css">
 </head>
 <body>
@@ -15,19 +15,18 @@
         </nav>
     </header>
     <div class="container">
-        <h2>A BLOG ALL ABOUT TECH</h2>
-        {{#if posts}}
-            <ul class="post-list">
-                {{#each posts}}
+        <h2>Comments for {{postTitle}}</h2>
+        {{#if comments}}
+            <ul class="comment-list">
+                {{#each comments}}
                     <li>
-                        <h3>{{title}}</h3>
-                        <p>{{body}}</p>
-                        <p class="post-date">Posted on {{createdAt}}</p>
+                        <p>{{comment}}</p>
+                        <p class="comment-user">Posted by {{username}} on {{createdAt}}</p>
                     </li>
                 {{/each}}
             </ul>
         {{else}}
-            <p>No posts available.</p>
+            <p>No comments available.</p>
         {{/if}}
     </div>
     <footer>
