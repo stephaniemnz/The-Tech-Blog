@@ -2,11 +2,7 @@ const router = require("express").Router();
 // Import the User model from the models folder
 const { User } = require("../../models");
 
-router.get("/signup", (req, res) => {
-  res.render("signup");
-});
-
-router.post("/signup", async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const userData = await User.create(req.body);
 
